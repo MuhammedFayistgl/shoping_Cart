@@ -18,13 +18,16 @@
   background-color: orangered;
   padding:10px 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
+
 .button-secondary{
   color: #ffff;
   border: none;
   background-color: #5e5e5e63;
   padding:10px 20px;
   border-radius: 5px;
+ 
 }
 
 .Heder-container {
@@ -145,9 +148,11 @@
 //main
 .maine-wraper {
   position: relative;
+  z-index: -9999;
+  margin-bottom: -5px;
   .main-info  {
     position: absolute;
-    top: 45%;
+    top: 35%;
     right: auto;
     left: 12%;
     z-index: 9999;

@@ -1,6 +1,7 @@
 import React from "react";
 import "./MinImg.scss";
 const MinImg = () => {
+
   return (
     <>
       <div className="maine-wraper">
