@@ -21,7 +21,9 @@ const Heder = () => {
         </div>
         <div className="nav-icons">
           <i class="fas fa-user"></i>
+          <div className="notification heart">1</div>
           <i class="fas fa-heart"></i>
+          <div className="notification Cart">2</div>
           <i class="fas fa-shopping-cart"></i>
         </div>
       </div>
