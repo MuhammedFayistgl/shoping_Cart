@@ -1,7 +1,6 @@
 import React from "react";
 import "./MinImg.scss";
 const MinImg = () => {
-
   return (
     <>
       <div className="maine-wraper">
@@ -12,7 +11,10 @@ const MinImg = () => {
         />
         <div className="main-info">
           <h1>GET THE NEW IPONE 12 PRO</h1>
-          <p>A transformative triple‑camera system that adds tons of capability without complexity</p>
+          <p>
+            A transformative triple‑camera system that adds tons of capability
+            without complexity
+          </p>
           <button className="button-primery">Buy Now</button>
           <button className="button-secondary">With $599 with trade-in</button>
         </div>

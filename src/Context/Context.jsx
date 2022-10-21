@@ -5,6 +5,7 @@ export const allProducts = React.createContext();
 export const Context = ({children}) => {
   let [Data, setData] = useState([]);
 
+
   let getallProducts = async () => {
     await axios.get("https://fakestoreapi.com/products").then((rsp) => {
       setData(rsp.data);
@@ -14,8 +15,7 @@ export const Context = ({children}) => {
 
   return (
    
-    <allProducts.Provider value={{Data}}>
-     
+    <allProducts.Provider value={{Data  }}>
         {children}
       </allProducts.Provider>
     
