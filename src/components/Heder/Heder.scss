@@ -46,6 +46,12 @@
     .logo {
       text-align: center;
       flex: 1;
+     
+      a{
+         text-decoration: none;
+      color: rgb(0, 0, 0);
+      font-size: larger;
+      }
     }
     .serch-bar {
       flex: 2;
@@ -60,10 +66,20 @@
   .nav-icons {
     width: 100px;
     position: relative;
+    i{
+      font-size: large;
+    }
+    a{color: black;}
+    .active{
+      color: red;
+      .notification{
+        display: none;
+      }
+    }
     .notification {
       position: absolute;
-      top: -8px;
-      right: 150px;
+      top: -21px;
+      right: 122px;
       z-index: -1;
       width: 20px;
       height: 20px;
@@ -75,9 +91,9 @@
       &.cart {
         right: 150px;
       }
-      &.heart {
-        right: 110px;
-      }
+      // &.heart {
+      //   right: 110px;
+      // }
     }
   }
   .navbody {
@@ -93,7 +109,7 @@
           padding: 0 10px;
           cursor: pointer;
           &:hover {
-            border-bottom: 3px solid orangered;
+           
             transition: all 0.1s ease-in;
           }
         }

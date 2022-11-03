@@ -1,11 +1,16 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./Heder.scss";
 
 const Heder = () => {
   return (
     <div className="Heder-container">
       <div className="heder-conteoner-section-1">
-        <div className="logo">LOGO</div>
+        <div className="logo">
+          {" "}
+          <Link to={"/"}> LOGO </Link>{" "}
+        </div>
+
         <div className="serch-bar">
           <div class="search-box">
             <input
@@ -20,18 +25,21 @@ const Heder = () => {
           </div>
         </div>
         <div className="nav-icons">
-          <i class="fas fa-user"></i>
-          <div className="notification heart">1</div>
+          <i class="fas fa-user"></i>      
           <i class="fas fa-heart"></i>
-          <div className="notification Cart">2</div>
-          <i class="fas fa-shopping-cart"></i>
+          <NavLink to={"/Cart"}>
+            <div className="notification Cart">2</div>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </NavLink>
         </div>
       </div>
       <div className="navbody">
         <div className="heder-conteoner-section-2 flex">
           <div className="dropdwnbar"></div>
           <ul className="li-none flex navitems">
-            <li className="active">Home</li>
+            <NavLink to={'/'}>
+              <li >Home</li>
+            </NavLink>
             <li>Discounts</li>
             <li>New Arrivals</li>
             <li>Trending</li>

@@ -1,22 +1,22 @@
-import { lazy, Suspense } from "react";
-import Loder from "./components/Loader/Loder";
-import { Context } from "./Context/Context";
-
-const Heder = lazy(() => import("./components/Heder/Heder"));
-const MinImg = lazy(() => import("./components/Main-img/MinImg"));
-const Recomended = lazy(() =>
-  import("./components/RecomendedProducts/Recomended")
-);
-
+import { Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
+import Home from "./components/Home/Home";
+import Heder from "../src/components/Heder/Heder.jsx";
+import ProdutDeteals from './components/ProductDetals/ProductDeteals'
+import { Context } from "./Context/Context.jsx";
+import './App.scss'
+import NotFont404 from "./components/Not Font Page/NotFont404";
 function App() {
   return (
     <>
-      <Context>
-        <Suspense fallback={<Loder />}>
-          <Heder />
-          <MinImg />
-          <Recomended />
-        </Suspense>
+       <Context>
+      <Heder />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="Cart" element={<Cart />} />
+        <Route path="ProductDetels/:id" element={<ProdutDeteals/>}/>
+        <Route path="*" element={<NotFont404/>}/>
+      </Routes>
       </Context>
     </>
   );

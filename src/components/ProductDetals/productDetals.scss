@@ -1,4 +1,50 @@
-.prduct-detals-container{
-   display: flex;
+.prduct-detals-container {
+  padding: 30px 100px;
+  position: relative;
+  display: flex;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px -5px 39px 5px rgba(0, 0, 0, 0.1);
+  .prduct-detals-image {
+    flex: 2;
+    text-align: center;
+    img{
+       width: 250px;
+    }
+  
+   .buttons{
+        display: flex;
+        gap:40px ;
+        justify-content: center;
+        margin-top: 30px;
+        button ,& a {
+          border-style: none;
+          padding:10px 20px;
+          border-radius: 5px;
+          color: #ffff;
+          font-size: medium;
+         
+        }
+         .CatButn{
+          background-color:#ff9f00;
+        }
+        .BuyButn{
+          background-color: #fb641b;
+        }
+      
+      }
     
+
+  }
+
+  .prduct-detals-information{
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+   flex: 3;
+   p{
+    line-height: 25px;
+    
+   }
+  }
 }
+
