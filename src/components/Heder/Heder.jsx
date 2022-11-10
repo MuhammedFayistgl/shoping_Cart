@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import "./Heder.scss";
 
 const Heder = () => {
+  const CartCont = useSelector((itme)=> itme)
+  console.log(CartCont,'cartCont');
   return (
     <div className="Heder-container">
       <div className="heder-conteoner-section-1">
@@ -28,7 +31,7 @@ const Heder = () => {
           <i class="fas fa-user"></i>      
           <i class="fas fa-heart"></i>
           <NavLink to={"/Cart"}>
-            <div className="notification Cart">2</div>
+            <div className="notification Cart">{CartCont.cart.Cart_cont}</div>
             <i class="fa-solid fa-cart-shopping"></i>
           </NavLink>
         </div>

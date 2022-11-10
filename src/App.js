@@ -6,6 +6,7 @@ import ProdutDeteals from './components/ProductDetals/ProductDeteals'
 import { Context } from "./Context/Context.jsx";
 import './App.scss'
 import NotFont404 from "./components/Not Font Page/NotFont404";
+import Counter from "./components/DemmyConter/Counter";
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Route path="Cart" element={<Cart />} />
         <Route path="ProductDetels/:id" element={<ProdutDeteals/>}/>
         <Route path="*" element={<NotFont404/>}/>
+        <Route path="counter" element={<Counter/>} />
       </Routes>
       </Context>
     </>

@@ -1,0 +1,12 @@
+.cont-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+    .cont-btn{
+        padding: 20px;
+        border: none;
+        background-color: rgb(247, 248, 163);
+        border-radius: 5px;
+    }
+}

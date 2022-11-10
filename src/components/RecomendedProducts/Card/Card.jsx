@@ -3,20 +3,23 @@ import "../../ComenCss/GlobalStyle.scss";
 import { useNavigate} from "react-router-dom";
 import React, { useContext } from "react";
 import { allProducts } from "../../../Context/Context";
+import { useDispatch } from "react-redux";
 const Card = () => {
   const contextValue = useContext(allProducts);
-
+  const  dispath = useDispatch()
  
    const navigate = useNavigate()
-    console.log('navigate ',navigate);
+
      return (
      
     <>
     { contextValue.Data.map((item)=>{
+    
       return(
       
        
-          <div onClick={() => {
+          <div key={item.id} onClick={() => {
+            dispath({type:item})
             navigate(`/ProductDetels/${item.id}`)
           }} className="Card-Container">
             <img src={item.image} alt="img" className="Card-img" />
