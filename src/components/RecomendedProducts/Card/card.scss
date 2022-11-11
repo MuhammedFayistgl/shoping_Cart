@@ -12,4 +12,18 @@
         height: 228px;
         object-fit: contain;
     }
+    .svgHomePage{
+        svg{
+        max-width: 100%;
+        padding: 0px;
+        margin-top: 2px;
+        
+    } 
+      
+    }
+}
+.cart-price-Button{
+   display: flex;
+align-items: flex-start; 
+flex-direction: row;
 }

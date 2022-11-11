@@ -5,7 +5,6 @@ import "./Heder.scss";
 
 const Heder = () => {
   const CartCont = useSelector((itme)=> itme)
-  console.log(CartCont,'cartCont');
   return (
     <div className="Heder-container">
       <div className="heder-conteoner-section-1">
