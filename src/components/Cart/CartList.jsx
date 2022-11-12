@@ -1,11 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CartContDicreas, CartContIngres } from "../../app/CartSlice";
 import "./CartList.scss";
 const CartList = () => {
+  const dispatch = useDispatch()
+  const Cart_cont = useSelector((data)=> data.cart.Cart_itm0)
   const catlstes = useSelector((itme) => {
     return itme.cart.Cart_itm;
   });
-  console.log(catlstes);
+ 
   return (
     <>
       <div className="Cart-list-container">
@@ -13,27 +16,57 @@ const CartList = () => {
           <h3 className="cartHeading-Name"> Your Cart List </h3>
         </div>
       </div>
-      {catlstes.map((itm) => {
-        return (
-          <span className="item-wrper">
-            <div className="cart-item">
-              <img src={itm.image} alt="img" />
-              <div className="controls">
-                <button>+</button>
-                <h4>2</h4>
-                <button>-</button>
+      <span className="item-totel-wrwper">
+        <span className="item-wrper">
+          {catlstes.map((itm) => {
+            console.log(itm);
+            return (
+              <div className="cart-item">
+                <img src={itm.image} alt="img" />
+                <div className="controls">
+                  <button onClick={ ()=> dispatch(CartContIngres(itm.id))} >+</button>
+                  <h4>{itm.count}</h4>
+                  <button className="btn-"  onClick={ ()=> dispatch(CartContDicreas(itm.id))} >-</button>
+                </div>
+                <div className="price">
+                  <h3>price</h3>
+                  <h5>{itm.price}</h5>
+                </div>
+                <div className="closbutton">
+                  <button>X</button>
+                </div>
               </div>
-              <div className="price">
-                <h3>price</h3>
-                <h5>{itm.price}</h5>
-              </div>
-              <div className="closbutton">
-                <button>X</button>
-              </div>
+            );
+          })}
+        </span>
+        <div className="total-conainer">
+          <div className="totel-items">
+            <div className="items-keys">
+             <h4>Price (1 item)</h4>
+             <h4>Discount</h4>
+             <h4>Delivery Charges</h4>
             </div>
-          </span>
-        );
-      })}
+            <div className="items-valus">
+             <h4>₹1,990</h4>
+             <h4>− ₹1,110</h4>
+             <h4>FREE</h4>
+            </div>
+            
+          </div>
+          <hr />
+          <div className="totel-items-total">
+            <div className="totel-items-keys">
+             <h2>Total Amount</h2>
+            
+            </div>
+            <div className="items-valus">
+             <h2>₹880</h2>
+            
+            </div>
+            
+          </div>
+        </div>
+      </span>
     </>
   );
 };
