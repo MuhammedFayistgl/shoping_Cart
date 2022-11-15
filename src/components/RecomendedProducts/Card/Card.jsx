@@ -5,6 +5,8 @@ import React, { useContext } from "react";
 import { allProducts } from "../../../Context/Context";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../app/CartSlice";
+
+import "swiper/css";
 const Card = () => {
   const contextValue = useContext(allProducts);
   const dispath = useDispatch();

@@ -4,7 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 import "./Heder.scss";
 
 const Heder = () => {
-  const CartCont = useSelector((itme)=> itme)
+  const CartCont = useSelector((itme) => itme);
+
   return (
     <div className="Heder-container">
       <div className="heder-conteoner-section-1">
@@ -27,10 +28,12 @@ const Heder = () => {
           </div>
         </div>
         <div className="nav-icons">
-          <i class="fas fa-user"></i>      
+          <i class="fas fa-user"></i>
           <i class="fas fa-heart"></i>
           <NavLink to={"/Cart"}>
-            <div className="notification Cart">{CartCont.cart.Cart_cont}</div>
+            <div className="notification Cart">
+              {CartCont.cart.Cart_itm.length}
+            </div>
             <i class="fa-solid fa-cart-shopping"></i>
           </NavLink>
         </div>
@@ -39,8 +42,8 @@ const Heder = () => {
         <div className="heder-conteoner-section-2 flex">
           <div className="dropdwnbar"></div>
           <ul className="li-none flex navitems">
-            <NavLink to={'/'}>
-              <li >Home</li>
+            <NavLink to={"/"}>
+              <li>Home</li>
             </NavLink>
             <li>Discounts</li>
             <li>New Arrivals</li>

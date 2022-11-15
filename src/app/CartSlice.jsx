@@ -13,20 +13,16 @@ const cartSlice = createSlice({
       );
 
       if (itmeExist) {
-        console.log("cont added");
         itmeExist.count++;
       } else {
-        console.log("item pushed");
         state.Cart_itm.push({
           ...action.payload,
           count: 1,
         });
       }
-
       state.Cart_cont = state.Cart_itm.length;
     },
     CartContIngres: (state, action) => {
-      console.log("ingrement");
       const id = action.payload;
       state.Cart_itm.forEach((itm) => {
         if (itm.id === id) {
@@ -35,7 +31,7 @@ const cartSlice = createSlice({
       });
     },
     CartContDicreas(state, action) {
-      console.log("dicrement");
+      console.log(state.Cart_itm.id);
       const id = action.payload;
       state.Cart_itm.forEach((itm) => {
         if (itm.id === id && itm.count > 1) {
@@ -43,8 +39,17 @@ const cartSlice = createSlice({
         }
       });
     },
+    CartItemRemove(state, action) {
+      state.Cart_itm.forEach((itm, index) => {
+        if (action.payload.id === itm.id) {
+          state.Cart_itm.splice(index, 1);
+        }
+      });
+    },
+   
   },
 });
 
 export default cartSlice.reducer;
-export const { addToCart, CartContIngres, CartContDicreas } = cartSlice.actions;
+export const { addToCart, CartContIngres, CartContDicreas, CartItemRemove  } =
+  cartSlice.actions;

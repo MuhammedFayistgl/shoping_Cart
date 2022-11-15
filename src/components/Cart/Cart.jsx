@@ -6,7 +6,7 @@ import CartList from "./CartList";
 const Cart = () => {
   const CartItems = useSelector((itmes) => itmes);
 
-  return <>{CartItems.cart.Cart_cont === 0 ? <EmptyCart /> : <CartList />}</>;
+  return <>{CartItems.cart.Cart_itm.length === 0 ? <EmptyCart /> : <CartList />}</>;
 };
 
 export default Cart;
