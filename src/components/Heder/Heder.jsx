@@ -32,6 +32,7 @@ const Heder = () => {
           <i class="fas fa-heart"></i>
           <NavLink to={"/Cart"}>
             <div className="notification Cart">
+             
               {CartCont.cart.Cart_itm.length}
             </div>
             <i class="fa-solid fa-cart-shopping"></i>

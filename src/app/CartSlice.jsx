@@ -6,8 +6,10 @@ const initialState = {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
+
+
   reducers: {
-    addToCart: (state, action) => {
+    addToCart: (state = initialState, action) => {
       const itmeExist = state.Cart_itm.find(
         (itm) => itm.id === action.payload.id
       );
@@ -31,7 +33,7 @@ const cartSlice = createSlice({
       });
     },
     CartContDicreas(state, action) {
-      console.log(state.Cart_itm.id);
+     
       const id = action.payload;
       state.Cart_itm.forEach((itm) => {
         if (itm.id === id && itm.count > 1) {
@@ -51,5 +53,4 @@ const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
-export const { addToCart, CartContIngres, CartContDicreas, CartItemRemove  } =
-  cartSlice.actions;
+export const { addToCart, CartContIngres, CartContDicreas, CartItemRemove  } = cartSlice.actions;

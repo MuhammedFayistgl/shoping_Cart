@@ -1,16 +1,97 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./MinImg.scss";
+import data from "./SldData";
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { fecthData } from "../../app/MainImgSlice";
+
 const MinImg = () => {
+  const dispath = useDispatch();
+
+  useEffect(() => {
+    dispath(fecthData());
+  }, []);
+
+  let img_Data = useSelector((data) => {
+    return data.Data.DATA[0][0];
+  });
+
+  console.log(img_Data, "img_Data");
   return (
     <>
+      {/*     
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+       
+          {img_Data.map((data, index) => {
+            {
+              console.table(index, "hfjhfjhhhhhhhhhhhhhhhh");
+            }
+            return ( 
+            <SwiperSlide>
+              <div key={index} className="maine-wraper">
+                <img className="main-img" alt="img" src={data} />
+
+                <div className="main-info">
+                  <h1>{""}</h1>
+                  <p>
+                    A transformative triple‑camera system that adds tons of
+                    capability without complexity
+                  </p>
+                  <button className="button-primery">Buy Now</button>
+                  <button className="button-secondary">
+                    With $599 with trade-in
+                  </button>
+                </div>
+              </div> 
+              </SwiperSlide>
+            );
+          })}
+       
+      </Swiper>
+ */}
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+       <SwiperSlide>
       <div className="maine-wraper">
         <img
           className="main-img"
           alt="img"
-          src="https://images.unsplash.com/photo-1647503380147-e075b24f4cbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+          src="https://freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background.png"
         />
+
         <div className="main-info">
-          <h1>GET THE NEW IPONE 12 PRO</h1>
+          <h1>50% Off For Your First <br /> Shopping</h1>
           <p>
             A transformative triple‑camera system that adds tons of capability
             without complexity
@@ -19,7 +100,29 @@ const MinImg = () => {
           <button className="button-secondary">With $599 with trade-in</button>
         </div>
       </div>
-    </>
+      </SwiperSlide>
+      <SwiperSlide>
+       <div className="maine-wraper">
+        <img
+          className="main-img"
+          alt="img"
+          src="https://freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background.png"
+        />
+
+        <div className="main-info">
+          <h1>50% Off For Your First <br /> Shopping</h1>
+          <p>
+            A transformative triple‑camera system that adds tons of capability
+            without complexity
+          </p>
+          <button className="button-primery">Buy Now</button>
+          <button className="button-secondary">With $599 with trade-in</button>
+        </div>
+      </div> 
+      </SwiperSlide>
+      </Swiper>
+   
+     </>
   );
 };
 

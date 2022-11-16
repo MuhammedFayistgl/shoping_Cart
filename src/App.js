@@ -8,7 +8,10 @@ import './App.scss'
 import NotFont404 from "./components/Not Font Page/NotFont404";
 import Counter from "./components/DemmyConter/Counter";
 import Slider from "./components/DemmyConter/slider/slider";
+
 function App() {
+
+ 
   return (
     <>
        <Context>

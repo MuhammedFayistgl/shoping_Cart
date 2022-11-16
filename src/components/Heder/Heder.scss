@@ -165,14 +165,20 @@
 .maine-wraper {
   position: relative;
   z-index: -9999;
-  margin-bottom: -5px;
+  display: flex;
+  justify-content: flex-end;
+  height: 74vh;
   .main-info  {
     position: absolute;
     top: 35%;
     right: auto;
-    left: 12%;
+    left: 18%;
     z-index: 9999;
-    color: #ffff;
+    color: rgb(59, 59, 59);
+    line-height: 48px;
+   h1{
+    font-family: cursive;
+   }
     p{
       padding: 30px 0;
     }
