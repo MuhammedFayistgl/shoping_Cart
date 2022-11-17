@@ -34,6 +34,6 @@ const MainImg = createSlice({
     },
   },
 });
-
+fecthData()
 export default MainImg.reducer;
 export const { getImgData } = MainImg.actions;

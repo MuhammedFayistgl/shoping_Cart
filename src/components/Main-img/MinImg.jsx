@@ -18,11 +18,11 @@ const MinImg = () => {
     dispath(fecthData());
   }, []);
 
-  let img_Data = useSelector((data) => {
-    return data.Data.DATA[0][0];
-  });
+  // let img_Data = useSelector((data) => {
+  //   return data.Data.DATA[0][0];
+  // });
 
-  console.log(img_Data, "img_Data");
+  // console.log(img_Data, "img_Data");
   return (
     <>
       {/*     
@@ -78,51 +78,38 @@ const MinImg = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-       <SwiperSlide>
-      <div className="maine-wraper">
-        <img
-          className="main-img"
-          alt="img"
-          src="https://freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background.png"
-        />
+        {data.map((i,inx) => {
+          return (
+            <SwiperSlide>
+              <div key={inx} className="maine-wraper">
+                <img
+                  className="main-img"
+                  alt="img"
+                  src={i.cover}
+                />
 
-        <div className="main-info">
-          <h1>50% Off For Your First <br /> Shopping</h1>
-          <p>
-            A transformative triple‑camera system that adds tons of capability
-            without complexity
-          </p>
-          <button className="button-primery">Buy Now</button>
-          <button className="button-secondary">With $599 with trade-in</button>
-        </div>
-      </div>
-      </SwiperSlide>
-      <SwiperSlide>
-       <div className="maine-wraper">
-        <img
-          className="main-img"
-          alt="img"
-          src="https://freepngimg.com/thumb/shoes/27428-5-nike-shoes-transparent-background.png"
-        />
-
-        <div className="main-info">
-          <h1>50% Off For Your First <br /> Shopping</h1>
-          <p>
-            A transformative triple‑camera system that adds tons of capability
-            without complexity
-          </p>
-          <button className="button-primery">Buy Now</button>
-          <button className="button-secondary">With $599 with trade-in</button>
-        </div>
-      </div> 
-      </SwiperSlide>
+                <div className="main-info">
+                  <h1>
+                   {i.title}
+                  </h1>
+                  <p>
+                   {i.desc}
+                  </p>
+                  <button className="button-primery">Buy Now</button>
+                  <button className="button-secondary">
+                    With $599 with trade-in
+                  </button>
+                </div>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
-   
-     </>
+    </>
   );
 };
 

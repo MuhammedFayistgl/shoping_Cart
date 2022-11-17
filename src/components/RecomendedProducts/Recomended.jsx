@@ -1,6 +1,7 @@
 import Card from "./Card/Card";
 import "./recomended.scss";
 import "../ComenCss/GlobalStyle.scss";
+import FlashDelas from "../Flash Delas/FlashDelas";
 
 const Recomended = () => {
   return (
@@ -11,6 +12,7 @@ const Recomended = () => {
       </div>
       <div className="recom-bg-wraper ">
         <Card />
+        <FlashDelas/>
       </div>
     </>
   );
