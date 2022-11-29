@@ -1,0 +1,24 @@
+//recomendrd -Component...
+.recom-bg-main-wrape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  gap: 10px;
+  // transform: translate(98px, 58px);
+}
+.recom-bg-wraper {
+  padding: 74px 104px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 38px;
+  background-color: #e5e3e2;
+  h5,
+  h2 {
+    text-align: center;
+  }
+}

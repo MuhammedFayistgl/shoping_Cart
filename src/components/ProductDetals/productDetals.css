@@ -1,0 +1,42 @@
+.prduct-detals-container {
+  padding: 30px 100px;
+  position: relative;
+  display: flex;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px -5px 39px 5px rgba(0, 0, 0, 0.1);
+}
+.prduct-detals-container .prduct-detals-image {
+  flex: 2;
+  text-align: center;
+}
+.prduct-detals-container .prduct-detals-image img {
+  width: 250px;
+}
+.prduct-detals-container .prduct-detals-image .buttons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.prduct-detals-container .prduct-detals-image .buttons button, .prduct-detals-container .prduct-detals-image .buttons a {
+  border-style: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: medium;
+}
+.prduct-detals-container .prduct-detals-image .buttons .CatButn {
+  background-color: #ff9f00;
+}
+.prduct-detals-container .prduct-detals-image .buttons .BuyButn {
+  background-color: #fb641b;
+}
+.prduct-detals-container .prduct-detals-information {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 3;
+}
+.prduct-detals-container .prduct-detals-information p {
+  line-height: 25px;
+}/*# sourceMappingURL=productDetals.css.map */

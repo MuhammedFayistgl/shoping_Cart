@@ -1,0 +1,36 @@
+.Card-Container{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease 0.5s;
+    background-color: white;
+    border-radius: 5px;
+    &:hover{
+        box-shadow: rgba(3, 0, 71, 0.29) 0px 1px 3px;
+    } 
+    img{
+        width: 177px;
+        height: 228px;
+        object-fit: contain;
+        padding: 15px;
+        transition: transform .5s ease;
+        &:hover{
+            transform: scale(110%);
+        }
+    }
+    .svgHomePage{
+        svg{
+        max-width: 100%;
+        padding: 0px;
+        margin-top: 2px;
+        
+    } 
+      
+    }
+}
+.cart-price-Button{
+   display: flex;
+align-items: flex-start; 
+flex-direction: row;
+}

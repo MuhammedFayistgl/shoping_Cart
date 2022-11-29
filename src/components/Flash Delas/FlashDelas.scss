@@ -1,0 +1,85 @@
+.box {
+  width: 100%;
+
+  display: inline-block;
+  .product {
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgba(3, 0, 71, 0.29) 0px 1px 3px;
+    margin: 10px;
+    &:hover{
+      .product-like{
+        opacity: 100%;
+      }
+      
+    }
+    .img {
+      img {
+        max-width: 100%;
+        
+      }
+      .discount {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #e94560;
+        padding: 3px 10px;
+        font-size: 12px;
+        border-radius: 50px;
+        color: #fff;
+        margin: 10px;
+      }
+    }
+    .product-like {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
+      opacity: 0;
+      transition: 0.5s;
+     
+      label {
+        background-color: #0f3460;
+        padding: 1px 10px;
+        font-size: 12px;
+        color: white;
+        border-radius: 50px;
+      }
+      i {
+        font-size: 20px;
+        margin: 10px 3px;
+       
+      }
+    }
+  }
+  .product-details {
+    h3 {
+      font-weight: 400;
+      font-size: 17px;
+    }
+    .rate {
+      i {
+        font-size: 15px;
+        color: #ffcd4e;
+        margin: 5px 5px 5px 0;
+      }
+    }
+    .price {
+      display: flex;
+      justify-content: space-between;
+      color: #e94560;
+      button {
+        background: none;
+        color: #e94560;
+        font-size: 20px;
+        transition: 0.5s;
+        border: 1px solid rgba(3, 0, 71, 0.09);
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

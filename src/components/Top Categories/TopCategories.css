@@ -1,0 +1,39 @@
+.TopCtgryproduct {
+  background: #fff;
+  padding: 20px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: rgba(3, 0, 71, 0.09) 0px 1px 3px;
+  margin: 10px;
+  width: 106%;
+}
+.TopCtgryproduct .nametop {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.TopCtgryproduct .nametop span {
+  background: #0f3460;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin: 5px;
+  position: absolute;
+  top: 10px;
+}
+.TopCtgryproduct .nametop .tleft {
+  left: 0;
+}
+.TopCtgryproduct .nametop .tright {
+  background-color: aliceblue;
+  color: black;
+  position: absolute;
+  right: 0;
+}
+.TopCtgryproduct .nametop .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}/*# sourceMappingURL=TopCategories.css.map */
