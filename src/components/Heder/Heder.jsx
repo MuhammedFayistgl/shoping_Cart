@@ -32,7 +32,6 @@ const Heder = () => {
           <i class="fas fa-heart"></i>
           <NavLink to={"/Cart"}>
             <div className="notification Cart">
-             
               {CartCont.cart.Cart_itm.length}
             </div>
             <i class="fa-solid fa-cart-shopping"></i>
@@ -43,6 +42,14 @@ const Heder = () => {
         <div className="heder-conteoner-section-2 flex">
           <div className="dropdwnbar"></div>
           <ul className="li-none flex navitems">
+            <select name="ALL Categories" id="selections">
+              <option selected>ALL Categories</option>
+              <option value="">Camara & Phones</option>
+              <option value="">Laptops</option>
+              <option value="">Laptops</option>
+              <option value="">Electronics</option>
+            </select>
+
             <NavLink to={"/"}>
               <li>Home</li>
             </NavLink>
@@ -53,6 +60,10 @@ const Heder = () => {
             <li>Weekly offers</li>
             <li>Become A vendor</li>
           </ul>
+          <label htmlFor="check-button">
+            <input type="checkbox" id="check-button" />
+            <i class="fa-solid fa-bars"></i>
+          </label>
         </div>
       </div>
     </div>

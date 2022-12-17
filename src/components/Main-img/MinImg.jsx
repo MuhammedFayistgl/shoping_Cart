@@ -84,7 +84,7 @@ const MinImg = () => {
       >
         {data.map((i,inx) => {
           return (
-            <SwiperSlide>
+             <SwiperSlide>
               <div key={inx} className="maine-wraper">
                 <img
                   className="main-img"
@@ -105,7 +105,7 @@ const MinImg = () => {
                   </button>
                 </div>
               </div>
-            </SwiperSlide>
+             </SwiperSlide>
           );
         })}
       </Swiper>

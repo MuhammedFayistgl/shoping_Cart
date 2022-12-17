@@ -4,30 +4,143 @@
   box-sizing: border-box;
 }
 
+//
+//  MEDIA QUERIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// A map of breakpoints.
+$breakpoints: (
+  xs: 375px,
+  sm: 640px,
+  md: 960px,
+  lg: 1200px,
+  xl: 1600px,
+  custom-tablet: 768px
+);
+
+//
+//  RESPOND ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  }
+
+  @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  RESPOND BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-below(sm) {}
+@mixin respond-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  }
+
+  @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+//
+//  RESPOND BETWEEN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-between(sm, md) {}
+@mixin respond-between($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+
+    // If one or both of the breakpoints don't exist.
+  }
+
+  @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower)==false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper)==false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
 .flex {
   display: flex;
   justify-content: space-evenly;
 }
+
 .li-none {
   list-style: none;
 }
+
 // BUTTONS..
-.button-primery{
+.button-primery {
   color: #ffff;
   border: none;
   background-color: orangered;
-  padding:10px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.button-secondary{
+.button-secondary {
   color: #ffff;
   border: none;
   background-color: #5e5e5e63;
-  padding:10px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
- 
+
 }
 
 .Heder-container {
@@ -38,24 +151,28 @@
   top: 0;
   z-index: 9999;
   background-color: white;
+
   .heder-conteoner-section-1 {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
     display: flex;
     align-items: center;
     height: 90px;
+
     .logo {
       text-align: center;
       flex: 1;
-     
-      a{
-         text-decoration: none;
-      color: rgb(0, 0, 0);
-      font-size: larger;
+
+      a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-size: larger;
       }
     }
+
     .serch-bar {
       flex: 2;
     }
+
     .nav-icons {
       display: flex;
       justify-content: center;
@@ -63,19 +180,27 @@
       flex: 1;
     }
   }
+
   .nav-icons {
     width: 100px;
     position: relative;
-    i{
+
+    i {
       font-size: large;
     }
-    a{color: black;}
-    .active{
+
+    a {
+      color: black;
+    }
+
+    .active {
       color: red;
-      .notification{
+
+      .notification {
         // display: none;
       }
     }
+
     .notification {
       position: absolute;
       top: -21px;
@@ -88,48 +213,116 @@
       text-align: center;
       color: white;
       font-size: small;
+
       &.cart {
         right: 150px;
       }
+
       // &.heart {
       //   right: 110px;
       // }
     }
   }
+
   .navbody {
     .heder-conteoner-section-2 {
       padding-top: 20px;
+
       .dropdwnbar {
         width: 100px;
         height: 30px;
       }
+
+      @include respond-below(md) {
+        .navitems {
+          display: unset;
+        }
+      }
+
       .navitems {
         gap: 50px;
+
         li {
           padding: 0 10px;
           cursor: pointer;
+
           &:hover {
-           
+
             transition: all 0.1s ease-in;
           }
         }
+
         .active {
           border-bottom: 3px solid orangered;
+        }
+
+        #selections {
+
+
+          &:hover {}
+
+          option {
+            color: aqua;
+            padding-left: 20px;
+            transform: rotate(30px);
+          }
+
+
+        }
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+      
+        text-align: center;
+        background: rgb(241, 79, 79);
+
+      }
+      position: relative;
+      .fa-solid {
+
+        display: none;
+
+        @include respond-below(md) {
+           display: block;
+          font-size: 30px;
+          position: absolute;
+          top: 6%;
+          left: 761px;
+          right: auto;
+          bottom: auto;
+        }
+        
+      }
+    
+      #check-button{
+        display: none;
+      }
+      #check-button:checked ~ {
+        .fa-solid {
+          left: 661px;
         }
       }
     }
   }
 }
+
+// mobail media quiry
+
+
+
+
 //serch box
 
 .search-box {
   width: 100%;
   position: relative;
   display: flex;
+
   input {
     font-size: 15px;
   }
 }
+
 .search-input {
   width: 100%;
   padding: 10px;
@@ -141,6 +334,7 @@
   color: rgb(94, 92, 91);
   background: none;
 }
+
 .search-button {
   text-align: center;
   height: 51px;
@@ -154,6 +348,7 @@
   font-size: 20px;
   border-left: 1px solid rgba(17, 17, 26, 0.1);
 }
+
 .container {
   width: 35%;
   position: absolute;
@@ -161,29 +356,42 @@
   top: 40%;
   transform: translate(-50%, -50%);
 }
+
 //main
 .maine-wraper {
   position: relative;
   z-index: -9999;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   height: 74vh;
-  .main-info  {
-    width: 590px;
+
+  .main-info {
+    width: 300px;
     position: absolute;
-    top: 35%;
+    top: 28%;
     right: auto;
-    left: 18%;
+    left: 45%;
     z-index: 9999;
     color: rgb(59, 59, 59);
     line-height: 48px;
-   h1{
-    font-family: cursive;
-   }
-    p{
-      padding: 30px 0;
+
+    h1 {
+      font-size: revert;
+      list-style: 0;
+      font-family: cursive;
+      color: rgb(161, 159, 159);
+      text-shadow: 2px 1px 2px rgba(0, 0, 0, 1);
     }
-    .button-secondary{
+
+    p {
+      padding: 30px 0;
+      line-height: 20px;
+      text-shadow: 1px 0px 25px rgba(0, 0, 0, 0.35);
+      ;
+    }
+
+    .button-secondary {
       margin-left: 10px;
     }
 
