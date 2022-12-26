@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/shoping_Cart/static/css/main.5fd7e3fe.css",
-    "main.js": "/shoping_Cart/static/js/main.b5868b60.js",
-    "static/css/671.3b258367.chunk.css": "/shoping_Cart/static/css/671.3b258367.chunk.css",
-    "static/js/671.255974bc.chunk.js": "/shoping_Cart/static/js/671.255974bc.chunk.js",
-    "static/css/988.f3e733ba.chunk.css": "/shoping_Cart/static/css/988.f3e733ba.chunk.css",
-    "static/js/988.67c74605.chunk.js": "/shoping_Cart/static/js/988.67c74605.chunk.js",
+    "main.js": "/shoping_Cart/static/js/main.cec03fbb.js",
+    "static/css/886.49bde280.chunk.css": "/shoping_Cart/static/css/886.49bde280.chunk.css",
+    "static/js/886.d9a6c472.chunk.js": "/shoping_Cart/static/js/886.d9a6c472.chunk.js",
+    "static/css/988.1eee8615.chunk.css": "/shoping_Cart/static/css/988.1eee8615.chunk.css",
+    "static/js/988.e7cf428a.chunk.js": "/shoping_Cart/static/js/988.e7cf428a.chunk.js",
     "index.html": "/shoping_Cart/index.html",
     "main.5fd7e3fe.css.map": "/shoping_Cart/static/css/main.5fd7e3fe.css.map",
-    "main.b5868b60.js.map": "/shoping_Cart/static/js/main.b5868b60.js.map",
-    "671.3b258367.chunk.css.map": "/shoping_Cart/static/css/671.3b258367.chunk.css.map",
-    "671.255974bc.chunk.js.map": "/shoping_Cart/static/js/671.255974bc.chunk.js.map",
-    "988.f3e733ba.chunk.css.map": "/shoping_Cart/static/css/988.f3e733ba.chunk.css.map",
-    "988.67c74605.chunk.js.map": "/shoping_Cart/static/js/988.67c74605.chunk.js.map"
+    "main.cec03fbb.js.map": "/shoping_Cart/static/js/main.cec03fbb.js.map",
+    "886.49bde280.chunk.css.map": "/shoping_Cart/static/css/886.49bde280.chunk.css.map",
+    "886.d9a6c472.chunk.js.map": "/shoping_Cart/static/js/886.d9a6c472.chunk.js.map",
+    "988.1eee8615.chunk.css.map": "/shoping_Cart/static/css/988.1eee8615.chunk.css.map",
+    "988.e7cf428a.chunk.js.map": "/shoping_Cart/static/js/988.e7cf428a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5fd7e3fe.css",
-    "static/js/main.b5868b60.js"
+    "static/js/main.cec03fbb.js"
   ]
 }
